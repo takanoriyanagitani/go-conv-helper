@@ -19,3 +19,6 @@
 
 # Go workspace file
 go.work
+
+*.swp
+examples/external/wasm/wazero/memory/memcopy/rs-memcopy/target

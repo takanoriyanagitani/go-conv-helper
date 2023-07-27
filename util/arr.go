@@ -13,6 +13,6 @@ func (a Array[T]) First() (t T, e error) {
 	case 0:
 		return t, ErrOutOfBound
 	default:
-		return t, nil
+		return a[0], nil
 	}
 }

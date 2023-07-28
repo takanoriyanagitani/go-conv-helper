@@ -22,3 +22,4 @@ go.work
 
 *.swp
 examples/external/wasm/wazero/memory/memcopy/rs-memcopy/target
+examples/external/wasm/wazero/simple/sin/rs-sin/target

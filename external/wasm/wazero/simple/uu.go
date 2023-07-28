@@ -109,6 +109,8 @@ func (b ModuleBuilder) Build(ctx context.Context) (Module, error) {
 	}, e
 }
 
+func (b ModuleBuilder) Close(ctx context.Context) error { return b.Runtime.Close(ctx) }
+
 func (b ModuleBuilder) NewSimpleFuncBuilder() func(context.Context) (SimpleFuncUU, error) {
 	return util.ComposeErr(
 		b.Build,
@@ -140,6 +142,8 @@ func (c Runtime) NewSimpleFuncBuilder() func(ctx context.Context, wasm []byte) (
 		},
 	)
 }
+
+func (c Runtime) Close(ctx context.Context) error { return c.Runtime.Close(ctx) }
 
 type RuntimeBuilder struct {
 	wz.ModuleConfig

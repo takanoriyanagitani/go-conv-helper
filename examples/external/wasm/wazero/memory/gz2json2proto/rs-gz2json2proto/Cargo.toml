@@ -1,0 +1,56 @@
+[package]
+name = "rs-gz2json2proto"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release-wasm]
+inherits = "release"
+lto = true
+strip = true
+opt-level = 's'
+codegen-units = 16
+
+[dependencies.serde_json]
+version = "1.0.104"
+default-features = false
+features = [
+  "alloc",
+]
+
+[dependencies.serde]
+version = "1.0.179"
+default-features = false
+features = [
+  "derive",
+  "alloc",
+]
+
+[dependencies.prost]
+version = "0.11.9"
+default-features = false
+features = [
+  "prost-derive",
+]
+
+[dependencies.prost-types]
+version = "0.11.9"
+default-features = false
+
+[dependencies.prost-helper]
+version = "0.6.0"
+
+[dependencies.bytes]
+version = "1.4.0"
+default-features = false
+features = [
+  "serde",
+]
+
+[build-dependencies.prost-build]
+version = "0.11.9"
+
+[build-dependencies.prost-serde]
+version = "0.3.0"

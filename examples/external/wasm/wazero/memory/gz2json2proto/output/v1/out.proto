@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package output.v1;
+
+option go_package = "gz2json2proto_output/v1";
+
+message Id {
+  string id = 1;
+}
+
+message Name {
+  string name = 1;
+}
+
+message Device {
+  Id id = 1;
+  Name name = 2;
+}
+
+message Current {
+  double current = 1;
+}
+
+message Timestamp {
+  sfixed64 unixtime_seconds = 1;
+}
+
+message Detail {
+  fixed32 timestamp_nanos = 1;
+  float voltage = 2;
+}
+
+message Output {
+  Device device = 1;
+  Timestamp timestamp = 2;
+  Current current = 3;
+  repeated Detail data = 4;
+}

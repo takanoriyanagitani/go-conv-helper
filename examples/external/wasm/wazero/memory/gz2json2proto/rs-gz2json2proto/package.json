@@ -1,0 +1,14 @@
+{
+  "name": "rs-gz2json2proto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "protobufjs-cli": "^1.1.1"
+  }
+}

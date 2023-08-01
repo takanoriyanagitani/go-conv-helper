@@ -39,25 +39,6 @@ pub extern "C" fn output_address() -> *mut u8 {
     }
 }
 
-fn dummy_count_len<R>(r: R) -> usize
-where
-    R: Read,
-{
-    let bytes = r.bytes();
-    bytes.count()
-}
-
-fn dummy_count_slice_via_read(i: &[u8]) -> usize {
-    dummy_count_len(i)
-}
-
-#[allow(unsafe_code)]
-#[no_mangle]
-pub extern "C" fn dummy_count() -> usize {
-    let i: &[u8] = input();
-    dummy_count_slice_via_read(i)
-}
-
 fn reader2writer<R, W>(mut reader: R, mut writer: W) -> Result<u64, String>
 where
     R: Read,

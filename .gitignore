@@ -25,3 +25,4 @@ examples/external/wasm/wazero/memory/memcopy/rs-memcopy/target
 examples/external/wasm/wazero/simple/sin/rs-sin/target
 examples/external/wasm/wazero/memory/gz2json2proto/rs-gz2json2proto/target
 examples/external/wasm/wazero/memory/gz2json2proto/rs-gz2json2proto/node_modules
+examples/external/wasm/wazero/memory/gz2json/rs-gz2json/target

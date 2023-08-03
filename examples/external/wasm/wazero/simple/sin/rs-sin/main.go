@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
 	"context"
 	"log"
+	"os"
 
 	wc "github.com/takanoriyanagitani/go-conv-helper/external/wasm"
 	ws "github.com/takanoriyanagitani/go-conv-helper/external/wasm/wazero/simple"
@@ -11,8 +11,10 @@ import (
 
 func must[T any](t T, e error) T {
 	switch e {
-		case nil: return t
-		default: panic(e)
+	case nil:
+		return t
+	default:
+		panic(e)
 	}
 }
 
@@ -23,10 +25,10 @@ var wasmBytes []byte = must(os.ReadFile("./rs_sin.wasm"))
 
 var rootCtx context.Context = context.Background()
 
-func main(){
+func main() {
 	var rtime ws.Runtime = rbld.Build(rootCtx)
 	defer rtime.Close(rootCtx)
-	var wasm2sfu func(ctx context.Context, wasm []byte)(ws.SimpleFuncUU, error) = rtime.
+	var wasm2sfu func(ctx context.Context, wasm []byte) (ws.SimpleFuncUU, error) = rtime.
 		NewSimpleFuncBuilder()
 	var sfuu ws.SimpleFuncUU = must(wasm2sfu(rootCtx, wasmBytes))
 	var s64d wc.SimpleFunc[float64, float64] = ws.ConverterDD(sfuu)

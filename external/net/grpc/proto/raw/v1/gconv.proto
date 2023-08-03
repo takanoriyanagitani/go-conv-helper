@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package raw.v1;
+
+option go_package = "raw.v1";
+
+message Type {
+  string name = 1;
+}
+
+message Data {
+  bytes raw = 1;
+}
+
+message ConvertRequest {
+  Type type = 1;
+  Data data = 2;
+}
+
+message ConvertResponse {
+  Type type = 1;
+  Data data = 2;
+}
+
+service ConvertService {
+  rpc Convert(ConvertRequest) returns (ConvertResponse);
+}

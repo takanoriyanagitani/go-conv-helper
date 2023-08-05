@@ -34,6 +34,13 @@ var DefaultRequestCreator RequestCreator = RequestCreatorNew("")
 
 type ResponseSerializer func(*raw.ConvertResponse) (output []byte, e error)
 
+func (ser ResponseSerializer) ToConverter(i2r Input2Response) ch.RawConverter {
+	return util.ComposeCtx(
+		i2r,
+		func(_ context.Context, res *raw.ConvertResponse) ([]byte, error) { return ser(res) },
+	)
+}
+
 func ResponseSerializerNew(
 	serializer func(*raw.Type, *raw.Data) ([]byte, error),
 ) ResponseSerializer {

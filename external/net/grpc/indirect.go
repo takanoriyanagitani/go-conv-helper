@@ -52,3 +52,33 @@ func (b ClientToConverterBuilder) Build() ClientToConverter {
 		return b.ResponseSerializer.ToConverter(i2r)
 	}
 }
+
+func (b ClientToConverterBuilder) WithRequestCreator(rc RequestCreator) ClientToConverterBuilder {
+	return ClientToConverterBuilder{
+		RequestCreator:     rc,
+		ResponseSerializer: b.ResponseSerializer,
+		Options:            b.Options,
+	}
+}
+
+func (b ClientToConverterBuilder) WithSerializer(rs ResponseSerializer) ClientToConverterBuilder {
+	return ClientToConverterBuilder{
+		RequestCreator:     b.RequestCreator,
+		ResponseSerializer: rs,
+		Options:            b.Options,
+	}
+}
+
+func (b ClientToConverterBuilder) WithOptions(opts []grpc.CallOption) ClientToConverterBuilder {
+	return ClientToConverterBuilder{
+		RequestCreator:     b.RequestCreator,
+		ResponseSerializer: b.ResponseSerializer,
+		Options:            opts,
+	}
+}
+
+var ClientToConverterBuilderEmpty ClientToConverterBuilder
+var ClientToConverterBuilderDefault = ClientToConverterBuilderEmpty.
+	WithRequestCreator(DefaultRequestCreator).
+	WithSerializer(DefaultResponseSerializer).
+	WithOptions(nil)

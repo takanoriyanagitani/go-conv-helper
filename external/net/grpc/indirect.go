@@ -78,7 +78,9 @@ func (b ClientToConverterBuilder) WithOptions(opts []grpc.CallOption) ClientToCo
 }
 
 var ClientToConverterBuilderEmpty ClientToConverterBuilder
-var ClientToConverterBuilderDefault = ClientToConverterBuilderEmpty.
+var ClientToConverterBuilderDefault ClientToConverterBuilder = ClientToConverterBuilderEmpty.
 	WithRequestCreator(DefaultRequestCreator).
 	WithSerializer(DefaultResponseSerializer).
 	WithOptions(nil)
+
+var ClientToConverterDefault ClientToConverter = ClientToConverterBuilderDefault.Build()

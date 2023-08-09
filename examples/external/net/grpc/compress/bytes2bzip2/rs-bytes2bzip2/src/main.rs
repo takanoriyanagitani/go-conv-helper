@@ -8,8 +8,10 @@ use rs_bytes2bzip2::compress::srv::compress_service_new;
 #[tokio::main]
 async fn main() -> Result<(), String> {
     let csvc: CompressServiceServer<_> = CompressServiceServer::new(compress_service_new(1024));
-    let mut server: Server = Server::builder();
-    let router: Router<_> = server.add_service(csvc);
+    let server: Server = Server::builder();
+    let router: Router<_> = server
+        .accept_http1(true)
+        .add_service(tonic_web::enable(csvc));
     let addr: SocketAddr =
         str::parse("127.0.0.1:50051").map_err(|e| format!("Invalid listen addr: {e}"))?;
     router

@@ -1,0 +1,3 @@
+- pseudo converter latency: 952 us
+- CPU: Core i7-9750H 2.60 GHz
+- RSS: 6,180 KB

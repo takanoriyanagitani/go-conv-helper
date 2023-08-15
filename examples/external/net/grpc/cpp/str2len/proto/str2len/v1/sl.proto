@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package str2len.v1;
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+message StringLengthRequest {
+  string source = 1;
+}
+
+message StringLengthResponse {
+  fixed64 length = 1;
+}
+
+service StringLengthService {
+  rpc StringLength(StringLengthRequest) returns (StringLengthResponse);
+}
+
+message Proxy {
+  message Uuid {
+    fixed64 hi = 1;
+    fixed64 lo = 2;
+  }
+
+  message RequestId {
+    Uuid id = 1;
+  }
+
+  message ReplyId {
+    Uuid id = 1;
+  }
+
+  message Retry {
+    fixed32 max_retry_count = 1;
+  }
+
+  message Target {
+    Uuid id = 1;
+  }
+
+  message GetCmdRequest {
+    RequestId cmd_req_id = 1;
+    google.protobuf.Duration wait = 2;
+    Retry retry = 3;
+    Target target = 4;
+  }
+
+  message StringLengthCommand {
+    RequestId strlen_req_id = 1;
+    ReplyId reply = 2;
+    StringLengthRequest request = 3;
+  }
+
+  message StringLengthResult {
+    RequestId strlen_req_id = 1;
+    ReplyId reply = 2;
+    StringLengthResponse response = 3;
+  }
+
+  message GetCmdResponse {
+    oneof command {
+      StringLengthCommand strlen_cmd = 1;
+      google.protobuf.Empty nop = 2;
+    }
+  }
+
+  message SendEventRequest {
+    RequestId send_id = 1;
+    oneof event {
+      StringLengthResult reply = 2;
+      google.protobuf.Empty empty = 3;
+    }
+  }
+
+  message SendEventResponse {
+    google.protobuf.Timestamp sent = 1;
+  }
+}
+
+service GetCmdService {
+  rpc GetCmd(Proxy.GetCmdRequest) returns (Proxy.GetCmdResponse);
+}
+
+service SendEventService {
+  rpc SendEvent(Proxy.SendEventRequest) returns (Proxy.SendEventResponse);
+}

@@ -417,7 +417,8 @@ int main(int argc, char** argv){
 	});
 	Converter& converter = fconv;
 
-	const char* addr = "localhost:50051";
+	const char* addr_env = getenv("ENV_ADDR");
+	const char* addr = nullptr == addr_env ? "localhost:50051" : addr_env;
 
 	shared_ptr<Channel> chan = grpc::CreateChannel(
 		addr,

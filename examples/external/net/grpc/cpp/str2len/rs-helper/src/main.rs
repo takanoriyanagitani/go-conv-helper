@@ -13,6 +13,8 @@ use rs_helper::s2l::StringLengthRequest;
 
 #[tokio::main]
 async fn main() -> Result<(), String> {
+    let addr_str: String =
+        std::env::var("ENV_ADDR").unwrap_or_else(|_| String::from("127.0.0.1:50051"));
     let dummy_commands: Vec<Command> = vec![
         Command::StrlenCmd(StringLengthCommand {
             strlen_req_id: None,
@@ -44,7 +46,7 @@ async fn main() -> Result<(), String> {
     let srv: StringLengthServiceServer<_> = StringLengthServiceServer::new(svc);
 
     let addr: SocketAddr =
-        str::parse("127.0.0.1:50051").map_err(|e| format!("Invalid addr: {e}"))?;
+        str::parse(addr_str.as_str()).map_err(|e| format!("Invalid addr: {e}"))?;
 
     let mut gsv: Server = Server::builder();
     let router: Router<_> = gsv

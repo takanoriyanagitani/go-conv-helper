@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package color.hsv.v1;
+
+option go_package = "hsv/v1";
+
+message Rgb {
+  float red = 1;
+  float green = 2;
+  float blue = 3;
+}
+
+message Hsv {
+  float hue = 1;
+  float saturation = 2;
+  float value = 3;
+}
+
+message FromHsvRequest {
+  Hsv hsv = 1;
+}
+
+message FromHsvResponse {
+  Rgb rgb = 1;
+}
+
+service ColorConvService {
+  rpc FromHsv(FromHsvRequest) returns (FromHsvResponse);
+}

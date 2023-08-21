@@ -16,5 +16,17 @@ version = "0.9.2"
 version = "1"
 features = ["rt-multi-thread"]
 
+[dependencies.tokio-stream]
+version = "0.1"
+features = [
+	"net",
+]
+
+[dependencies.tower]
+version = "0.4"
+
+[dependencies.hyper]
+version = "0.14"
+
 [build-dependencies.tonic-build]
 version = "0.9.2"

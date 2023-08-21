@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nconv.proto\x12\x0c\x63olor.hsv.v1\"/\n\x03Rgb\x12\x0b\n\x03red\x18\x01 \x01(\x02\x12\r\n\x05green\x18\x02 \x01(\x02\x12\x0c\n\x04\x62lue\x18\x03 \x01(\x02\"5\n\x03Hsv\x12\x0b\n\x03hue\x18\x01 \x01(\x02\x12\x12\n\nsaturation\x18\x02 \x01(\x02\x12\r\n\x05value\x18\x03 \x01(\x02\"0\n\x0e\x46romHsvRequest\x12\x1e\n\x03hsv\x18\x01 \x01(\x0b\x32\x11.color.hsv.v1.Hsv\"1\n\x0f\x46romHsvResponse\x12\x1e\n\x03rgb\x18\x01 \x01(\x0b\x32\x11.color.hsv.v1.Rgb2Z\n\x10\x43olorConvService\x12\x46\n\x07\x46romHsv\x12\x1c.color.hsv.v1.FromHsvRequest\x1a\x1d.color.hsv.v1.FromHsvResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nconv.proto\x12\x0c\x63olor.hsv.v1\"/\n\x03Rgb\x12\x0b\n\x03red\x18\x01 \x01(\x02\x12\r\n\x05green\x18\x02 \x01(\x02\x12\x0c\n\x04\x62lue\x18\x03 \x01(\x02\"5\n\x03Hsv\x12\x0b\n\x03hue\x18\x01 \x01(\x02\x12\x12\n\nsaturation\x18\x02 \x01(\x02\x12\r\n\x05value\x18\x03 \x01(\x02\"0\n\x0e\x46romHsvRequest\x12\x1e\n\x03hsv\x18\x01 \x01(\x0b\x32\x11.color.hsv.v1.Hsv\"1\n\x0f\x46romHsvResponse\x12\x1e\n\x03rgb\x18\x01 \x01(\x0b\x32\x11.color.hsv.v1.Rgb\"$\n\tTimestamp\x12\x17\n\x0funixtime_micros\x18\x01 \x01(\x06\"\xa0\x01\n\x06HsvEvt\x1aZ\n\x10\x43onvertedRequest\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.color.hsv.v1.Meta\x12$\n\tconverted\x18\x02 \x01(\x0b\x32\x11.color.hsv.v1.Rgb\x1a:\n\x11\x43onvertedResponse\x12%\n\x04sent\x18\x01 \x01(\x0b\x32\x17.color.hsv.v1.Timestamp\"\x1e\n\x04Uuid\x12\n\n\x02hi\x18\x01 \x01(\x06\x12\n\n\x02lo\x18\x02 \x01(\x06\"T\n\x04Meta\x12&\n\nrequest_id\x18\x01 \x01(\x0b\x32\x12.color.hsv.v1.Uuid\x12$\n\x08reply_id\x18\x02 \x01(\x0b\x32\x12.color.hsv.v1.Uuid\"\x8f\x01\n\x06HsvCmd\x1aR\n\x0e\x43onvertRequest\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.color.hsv.v1.Meta\x12\x1e\n\x03hsv\x18\x02 \x01(\x0b\x32\x11.color.hsv.v1.Hsv\x1a\x31\n\x0f\x43onvertResponse\x12\x1e\n\x03rgb\x18\x01 \x01(\x0b\x32\x11.color.hsv.v1.Rgb\"\xda\x02\n\x08HsvOrder\x1a\x37\n\rGetCmdRequest\x12&\n\nrequest_id\x18\x01 \x01(\x0b\x32\x12.color.hsv.v1.Uuid\x1a\x43\n\x0eGetCmdResponse\x12\x31\n\x08\x63ommands\x18\x01 \x01(\x0b\x32\x1f.color.hsv.v1.HsvOrder.Commands\x1a=\n\nInvalidCmd\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.color.hsv.v1.Meta\x12\r\n\x05\x65rror\x18\x02 \x01(\t\x1a\x90\x01\n\x08\x43ommands\x12\x34\n\x07invalid\x18\x01 \x01(\x0b\x32!.color.hsv.v1.HsvOrder.InvalidCmdH\x00\x12\x0f\n\x05\x66\x61tal\x18\x02 \x01(\tH\x00\x12\x36\n\x07\x63onvert\x18\x03 \x01(\x0b\x32#.color.hsv.v1.HsvCmd.ConvertRequestH\x00\x42\x05\n\x03\x63md2Z\n\x10\x43olorConvService\x12\x46\n\x07\x46romHsv\x12\x1c.color.hsv.v1.FromHsvRequest\x1a\x1d.color.hsv.v1.FromHsvResponse2k\n\rHsvEvtService\x12Z\n\tConverted\x12%.color.hsv.v1.HsvEvt.ConvertedRequest\x1a&.color.hsv.v1.HsvEvt.ConvertedResponse2e\n\rHsvCmdService\x12T\n\x07\x43onvert\x12#.color.hsv.v1.HsvCmd.ConvertRequest\x1a$.color.hsv.v1.HsvCmd.ConvertResponse2j\n\x11HsvCmdRecvService\x12U\n\x06GetCmd\x12$.color.hsv.v1.HsvOrder.GetCmdRequest\x1a%.color.hsv.v1.HsvOrder.GetCmdResponseB\x08Z\x06hsv/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -21,6 +21,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'conv_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'Z\006hsv/v1'
   _globals['_RGB']._serialized_start=28
   _globals['_RGB']._serialized_end=75
   _globals['_HSV']._serialized_start=77
@@ -29,6 +30,40 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_FROMHSVREQUEST']._serialized_end=180
   _globals['_FROMHSVRESPONSE']._serialized_start=182
   _globals['_FROMHSVRESPONSE']._serialized_end=231
-  _globals['_COLORCONVSERVICE']._serialized_start=233
-  _globals['_COLORCONVSERVICE']._serialized_end=323
+  _globals['_TIMESTAMP']._serialized_start=233
+  _globals['_TIMESTAMP']._serialized_end=269
+  _globals['_HSVEVT']._serialized_start=272
+  _globals['_HSVEVT']._serialized_end=432
+  _globals['_HSVEVT_CONVERTEDREQUEST']._serialized_start=282
+  _globals['_HSVEVT_CONVERTEDREQUEST']._serialized_end=372
+  _globals['_HSVEVT_CONVERTEDRESPONSE']._serialized_start=374
+  _globals['_HSVEVT_CONVERTEDRESPONSE']._serialized_end=432
+  _globals['_UUID']._serialized_start=434
+  _globals['_UUID']._serialized_end=464
+  _globals['_META']._serialized_start=466
+  _globals['_META']._serialized_end=550
+  _globals['_HSVCMD']._serialized_start=553
+  _globals['_HSVCMD']._serialized_end=696
+  _globals['_HSVCMD_CONVERTREQUEST']._serialized_start=563
+  _globals['_HSVCMD_CONVERTREQUEST']._serialized_end=645
+  _globals['_HSVCMD_CONVERTRESPONSE']._serialized_start=647
+  _globals['_HSVCMD_CONVERTRESPONSE']._serialized_end=696
+  _globals['_HSVORDER']._serialized_start=699
+  _globals['_HSVORDER']._serialized_end=1045
+  _globals['_HSVORDER_GETCMDREQUEST']._serialized_start=711
+  _globals['_HSVORDER_GETCMDREQUEST']._serialized_end=766
+  _globals['_HSVORDER_GETCMDRESPONSE']._serialized_start=768
+  _globals['_HSVORDER_GETCMDRESPONSE']._serialized_end=835
+  _globals['_HSVORDER_INVALIDCMD']._serialized_start=837
+  _globals['_HSVORDER_INVALIDCMD']._serialized_end=898
+  _globals['_HSVORDER_COMMANDS']._serialized_start=901
+  _globals['_HSVORDER_COMMANDS']._serialized_end=1045
+  _globals['_COLORCONVSERVICE']._serialized_start=1047
+  _globals['_COLORCONVSERVICE']._serialized_end=1137
+  _globals['_HSVEVTSERVICE']._serialized_start=1139
+  _globals['_HSVEVTSERVICE']._serialized_end=1246
+  _globals['_HSVCMDSERVICE']._serialized_start=1248
+  _globals['_HSVCMDSERVICE']._serialized_end=1349
+  _globals['_HSVCMDRECVSERVICE']._serialized_start=1351
+  _globals['_HSVCMDRECVSERVICE']._serialized_end=1457
 # @@protoc_insertion_point(module_scope)

@@ -240,6 +240,725 @@ func (x *FromHsvResponse) GetRgb() *Rgb {
 	return nil
 }
 
+type Timestamp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UnixtimeMicros int64 `protobuf:"fixed64,1,opt,name=unixtime_micros,json=unixtimeMicros,proto3" json:"unixtime_micros,omitempty"`
+}
+
+func (x *Timestamp) Reset() {
+	*x = Timestamp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Timestamp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Timestamp) ProtoMessage() {}
+
+func (x *Timestamp) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Timestamp.ProtoReflect.Descriptor instead.
+func (*Timestamp) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *Timestamp) GetUnixtimeMicros() int64 {
+	if x != nil {
+		return x.UnixtimeMicros
+	}
+	return 0
+}
+
+type HsvEvt struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *HsvEvt) Reset() {
+	*x = HsvEvt{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvEvt) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvEvt) ProtoMessage() {}
+
+func (x *HsvEvt) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvEvt.ProtoReflect.Descriptor instead.
+func (*HsvEvt) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{5}
+}
+
+type Uuid struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Hi uint64 `protobuf:"fixed64,1,opt,name=hi,proto3" json:"hi,omitempty"`
+	Lo uint64 `protobuf:"fixed64,2,opt,name=lo,proto3" json:"lo,omitempty"`
+}
+
+func (x *Uuid) Reset() {
+	*x = Uuid{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Uuid) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Uuid) ProtoMessage() {}
+
+func (x *Uuid) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Uuid.ProtoReflect.Descriptor instead.
+func (*Uuid) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *Uuid) GetHi() uint64 {
+	if x != nil {
+		return x.Hi
+	}
+	return 0
+}
+
+func (x *Uuid) GetLo() uint64 {
+	if x != nil {
+		return x.Lo
+	}
+	return 0
+}
+
+type Meta struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RequestId *Uuid `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
+	ReplyId   *Uuid `protobuf:"bytes,2,opt,name=reply_id,json=replyId,proto3" json:"reply_id,omitempty"`
+}
+
+func (x *Meta) Reset() {
+	*x = Meta{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Meta) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Meta) ProtoMessage() {}
+
+func (x *Meta) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Meta.ProtoReflect.Descriptor instead.
+func (*Meta) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *Meta) GetRequestId() *Uuid {
+	if x != nil {
+		return x.RequestId
+	}
+	return nil
+}
+
+func (x *Meta) GetReplyId() *Uuid {
+	if x != nil {
+		return x.ReplyId
+	}
+	return nil
+}
+
+type HsvCmd struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *HsvCmd) Reset() {
+	*x = HsvCmd{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvCmd) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvCmd) ProtoMessage() {}
+
+func (x *HsvCmd) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvCmd.ProtoReflect.Descriptor instead.
+func (*HsvCmd) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{8}
+}
+
+type HsvOrder struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *HsvOrder) Reset() {
+	*x = HsvOrder{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvOrder) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvOrder) ProtoMessage() {}
+
+func (x *HsvOrder) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvOrder.ProtoReflect.Descriptor instead.
+func (*HsvOrder) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{9}
+}
+
+type HsvEvt_ConvertedRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Meta      *Meta `protobuf:"bytes,1,opt,name=meta,proto3" json:"meta,omitempty"`
+	Converted *Rgb  `protobuf:"bytes,2,opt,name=converted,proto3" json:"converted,omitempty"`
+}
+
+func (x *HsvEvt_ConvertedRequest) Reset() {
+	*x = HsvEvt_ConvertedRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvEvt_ConvertedRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvEvt_ConvertedRequest) ProtoMessage() {}
+
+func (x *HsvEvt_ConvertedRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvEvt_ConvertedRequest.ProtoReflect.Descriptor instead.
+func (*HsvEvt_ConvertedRequest) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{5, 0}
+}
+
+func (x *HsvEvt_ConvertedRequest) GetMeta() *Meta {
+	if x != nil {
+		return x.Meta
+	}
+	return nil
+}
+
+func (x *HsvEvt_ConvertedRequest) GetConverted() *Rgb {
+	if x != nil {
+		return x.Converted
+	}
+	return nil
+}
+
+type HsvEvt_ConvertedResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Sent *Timestamp `protobuf:"bytes,1,opt,name=sent,proto3" json:"sent,omitempty"`
+}
+
+func (x *HsvEvt_ConvertedResponse) Reset() {
+	*x = HsvEvt_ConvertedResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvEvt_ConvertedResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvEvt_ConvertedResponse) ProtoMessage() {}
+
+func (x *HsvEvt_ConvertedResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvEvt_ConvertedResponse.ProtoReflect.Descriptor instead.
+func (*HsvEvt_ConvertedResponse) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{5, 1}
+}
+
+func (x *HsvEvt_ConvertedResponse) GetSent() *Timestamp {
+	if x != nil {
+		return x.Sent
+	}
+	return nil
+}
+
+type HsvCmd_ConvertRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Meta *Meta `protobuf:"bytes,1,opt,name=meta,proto3" json:"meta,omitempty"`
+	Hsv  *Hsv  `protobuf:"bytes,2,opt,name=hsv,proto3" json:"hsv,omitempty"`
+}
+
+func (x *HsvCmd_ConvertRequest) Reset() {
+	*x = HsvCmd_ConvertRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvCmd_ConvertRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvCmd_ConvertRequest) ProtoMessage() {}
+
+func (x *HsvCmd_ConvertRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvCmd_ConvertRequest.ProtoReflect.Descriptor instead.
+func (*HsvCmd_ConvertRequest) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{8, 0}
+}
+
+func (x *HsvCmd_ConvertRequest) GetMeta() *Meta {
+	if x != nil {
+		return x.Meta
+	}
+	return nil
+}
+
+func (x *HsvCmd_ConvertRequest) GetHsv() *Hsv {
+	if x != nil {
+		return x.Hsv
+	}
+	return nil
+}
+
+type HsvCmd_ConvertResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Rgb *Rgb `protobuf:"bytes,1,opt,name=rgb,proto3" json:"rgb,omitempty"`
+}
+
+func (x *HsvCmd_ConvertResponse) Reset() {
+	*x = HsvCmd_ConvertResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvCmd_ConvertResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvCmd_ConvertResponse) ProtoMessage() {}
+
+func (x *HsvCmd_ConvertResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvCmd_ConvertResponse.ProtoReflect.Descriptor instead.
+func (*HsvCmd_ConvertResponse) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{8, 1}
+}
+
+func (x *HsvCmd_ConvertResponse) GetRgb() *Rgb {
+	if x != nil {
+		return x.Rgb
+	}
+	return nil
+}
+
+type HsvOrder_GetCmdRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RequestId *Uuid `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
+}
+
+func (x *HsvOrder_GetCmdRequest) Reset() {
+	*x = HsvOrder_GetCmdRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvOrder_GetCmdRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvOrder_GetCmdRequest) ProtoMessage() {}
+
+func (x *HsvOrder_GetCmdRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvOrder_GetCmdRequest.ProtoReflect.Descriptor instead.
+func (*HsvOrder_GetCmdRequest) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{9, 0}
+}
+
+func (x *HsvOrder_GetCmdRequest) GetRequestId() *Uuid {
+	if x != nil {
+		return x.RequestId
+	}
+	return nil
+}
+
+type HsvOrder_GetCmdResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Commands *HsvOrder_Commands `protobuf:"bytes,1,opt,name=commands,proto3" json:"commands,omitempty"`
+}
+
+func (x *HsvOrder_GetCmdResponse) Reset() {
+	*x = HsvOrder_GetCmdResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvOrder_GetCmdResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvOrder_GetCmdResponse) ProtoMessage() {}
+
+func (x *HsvOrder_GetCmdResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvOrder_GetCmdResponse.ProtoReflect.Descriptor instead.
+func (*HsvOrder_GetCmdResponse) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{9, 1}
+}
+
+func (x *HsvOrder_GetCmdResponse) GetCommands() *HsvOrder_Commands {
+	if x != nil {
+		return x.Commands
+	}
+	return nil
+}
+
+type HsvOrder_InvalidCmd struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Meta  *Meta  `protobuf:"bytes,1,opt,name=meta,proto3" json:"meta,omitempty"`
+	Error string `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+}
+
+func (x *HsvOrder_InvalidCmd) Reset() {
+	*x = HsvOrder_InvalidCmd{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvOrder_InvalidCmd) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvOrder_InvalidCmd) ProtoMessage() {}
+
+func (x *HsvOrder_InvalidCmd) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvOrder_InvalidCmd.ProtoReflect.Descriptor instead.
+func (*HsvOrder_InvalidCmd) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{9, 2}
+}
+
+func (x *HsvOrder_InvalidCmd) GetMeta() *Meta {
+	if x != nil {
+		return x.Meta
+	}
+	return nil
+}
+
+func (x *HsvOrder_InvalidCmd) GetError() string {
+	if x != nil {
+		return x.Error
+	}
+	return ""
+}
+
+type HsvOrder_Commands struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Cmd:
+	//
+	//	*HsvOrder_Commands_Invalid
+	//	*HsvOrder_Commands_Fatal
+	//	*HsvOrder_Commands_Convert
+	Cmd isHsvOrder_Commands_Cmd `protobuf_oneof:"cmd"`
+}
+
+func (x *HsvOrder_Commands) Reset() {
+	*x = HsvOrder_Commands{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HsvOrder_Commands) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HsvOrder_Commands) ProtoMessage() {}
+
+func (x *HsvOrder_Commands) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_color_hsv_v1_conv_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HsvOrder_Commands.ProtoReflect.Descriptor instead.
+func (*HsvOrder_Commands) Descriptor() ([]byte, []int) {
+	return file_proto_color_hsv_v1_conv_proto_rawDescGZIP(), []int{9, 3}
+}
+
+func (m *HsvOrder_Commands) GetCmd() isHsvOrder_Commands_Cmd {
+	if m != nil {
+		return m.Cmd
+	}
+	return nil
+}
+
+func (x *HsvOrder_Commands) GetInvalid() *HsvOrder_InvalidCmd {
+	if x, ok := x.GetCmd().(*HsvOrder_Commands_Invalid); ok {
+		return x.Invalid
+	}
+	return nil
+}
+
+func (x *HsvOrder_Commands) GetFatal() string {
+	if x, ok := x.GetCmd().(*HsvOrder_Commands_Fatal); ok {
+		return x.Fatal
+	}
+	return ""
+}
+
+func (x *HsvOrder_Commands) GetConvert() *HsvCmd_ConvertRequest {
+	if x, ok := x.GetCmd().(*HsvOrder_Commands_Convert); ok {
+		return x.Convert
+	}
+	return nil
+}
+
+type isHsvOrder_Commands_Cmd interface {
+	isHsvOrder_Commands_Cmd()
+}
+
+type HsvOrder_Commands_Invalid struct {
+	Invalid *HsvOrder_InvalidCmd `protobuf:"bytes,1,opt,name=invalid,proto3,oneof"`
+}
+
+type HsvOrder_Commands_Fatal struct {
+	Fatal string `protobuf:"bytes,2,opt,name=fatal,proto3,oneof"`
+}
+
+type HsvOrder_Commands_Convert struct {
+	Convert *HsvCmd_ConvertRequest `protobuf:"bytes,3,opt,name=convert,proto3,oneof"`
+}
+
+func (*HsvOrder_Commands_Invalid) isHsvOrder_Commands_Cmd() {}
+
+func (*HsvOrder_Commands_Fatal) isHsvOrder_Commands_Cmd() {}
+
+func (*HsvOrder_Commands_Convert) isHsvOrder_Commands_Cmd() {}
+
 var File_proto_color_hsv_v1_conv_proto protoreflect.FileDescriptor
 
 var file_proto_color_hsv_v1_conv_proto_rawDesc = []byte{
@@ -261,14 +980,94 @@ var file_proto_color_hsv_v1_conv_proto_rawDesc = []byte{
 	0x76, 0x52, 0x03, 0x68, 0x73, 0x76, 0x22, 0x36, 0x0a, 0x0f, 0x46, 0x72, 0x6f, 0x6d, 0x48, 0x73,
 	0x76, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x23, 0x0a, 0x03, 0x72, 0x67, 0x62,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68,
-	0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x67, 0x62, 0x52, 0x03, 0x72, 0x67, 0x62, 0x32, 0x5a,
-	0x0a, 0x10, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x43, 0x6f, 0x6e, 0x76, 0x53, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x12, 0x46, 0x0a, 0x07, 0x46, 0x72, 0x6f, 0x6d, 0x48, 0x73, 0x76, 0x12, 0x1c, 0x2e,
-	0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x46, 0x72, 0x6f,
-	0x6d, 0x48, 0x73, 0x76, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x63, 0x6f,
-	0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x46, 0x72, 0x6f, 0x6d, 0x48,
-	0x73, 0x76, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x08, 0x5a, 0x06, 0x68, 0x73,
-	0x76, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x67, 0x62, 0x52, 0x03, 0x72, 0x67, 0x62, 0x22, 0x34,
+	0x0a, 0x09, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x12, 0x27, 0x0a, 0x0f, 0x75,
+	0x6e, 0x69, 0x78, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x6d, 0x69, 0x63, 0x72, 0x6f, 0x73, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x10, 0x52, 0x0e, 0x75, 0x6e, 0x69, 0x78, 0x74, 0x69, 0x6d, 0x65, 0x4d, 0x69,
+	0x63, 0x72, 0x6f, 0x73, 0x22, 0xb7, 0x01, 0x0a, 0x06, 0x48, 0x73, 0x76, 0x45, 0x76, 0x74, 0x1a,
+	0x6b, 0x0a, 0x10, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x74, 0x65, 0x64, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x26, 0x0a, 0x04, 0x6d, 0x65, 0x74, 0x61, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x12, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31,
+	0x2e, 0x4d, 0x65, 0x74, 0x61, 0x52, 0x04, 0x6d, 0x65, 0x74, 0x61, 0x12, 0x2f, 0x0a, 0x09, 0x63,
+	0x6f, 0x6e, 0x76, 0x65, 0x72, 0x74, 0x65, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11,
+	0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x67,
+	0x62, 0x52, 0x09, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x74, 0x65, 0x64, 0x1a, 0x40, 0x0a, 0x11,
+	0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x74, 0x65, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x2b, 0x0a, 0x04, 0x73, 0x65, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x17, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x54,
+	0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x52, 0x04, 0x73, 0x65, 0x6e, 0x74, 0x22, 0x26,
+	0x0a, 0x04, 0x55, 0x75, 0x69, 0x64, 0x12, 0x0e, 0x0a, 0x02, 0x68, 0x69, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x06, 0x52, 0x02, 0x68, 0x69, 0x12, 0x0e, 0x0a, 0x02, 0x6c, 0x6f, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x06, 0x52, 0x02, 0x6c, 0x6f, 0x22, 0x68, 0x0a, 0x04, 0x4d, 0x65, 0x74, 0x61, 0x12, 0x31,
+	0x0a, 0x0a, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x12, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76,
+	0x31, 0x2e, 0x55, 0x75, 0x69, 0x64, 0x52, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x49,
+	0x64, 0x12, 0x2d, 0x0a, 0x08, 0x72, 0x65, 0x70, 0x6c, 0x79, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e,
+	0x76, 0x31, 0x2e, 0x55, 0x75, 0x69, 0x64, 0x52, 0x07, 0x72, 0x65, 0x70, 0x6c, 0x79, 0x49, 0x64,
+	0x22, 0x9f, 0x01, 0x0a, 0x06, 0x48, 0x73, 0x76, 0x43, 0x6d, 0x64, 0x1a, 0x5d, 0x0a, 0x0e, 0x43,
+	0x6f, 0x6e, 0x76, 0x65, 0x72, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x26, 0x0a,
+	0x04, 0x6d, 0x65, 0x74, 0x61, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x63, 0x6f,
+	0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65, 0x74, 0x61, 0x52,
+	0x04, 0x6d, 0x65, 0x74, 0x61, 0x12, 0x23, 0x0a, 0x03, 0x68, 0x73, 0x76, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x11, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76,
+	0x31, 0x2e, 0x48, 0x73, 0x76, 0x52, 0x03, 0x68, 0x73, 0x76, 0x1a, 0x36, 0x0a, 0x0f, 0x43, 0x6f,
+	0x6e, 0x76, 0x65, 0x72, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x23, 0x0a,
+	0x03, 0x72, 0x67, 0x62, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x63, 0x6f, 0x6c,
+	0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x67, 0x62, 0x52, 0x03, 0x72,
+	0x67, 0x62, 0x22, 0x95, 0x03, 0x0a, 0x08, 0x48, 0x73, 0x76, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x1a,
+	0x42, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x43, 0x6d, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x31, 0x0a, 0x0a, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76,
+	0x2e, 0x76, 0x31, 0x2e, 0x55, 0x75, 0x69, 0x64, 0x52, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x49, 0x64, 0x1a, 0x4d, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x43, 0x6d, 0x64, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x08, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64,
+	0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e,
+	0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x48, 0x73, 0x76, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x2e,
+	0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x73, 0x52, 0x08, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e,
+	0x64, 0x73, 0x1a, 0x4a, 0x0a, 0x0a, 0x49, 0x6e, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x43, 0x6d, 0x64,
+	0x12, 0x26, 0x0a, 0x04, 0x6d, 0x65, 0x74, 0x61, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12,
+	0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x4d, 0x65,
+	0x74, 0x61, 0x52, 0x04, 0x6d, 0x65, 0x74, 0x61, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f,
+	0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x1a, 0xa9,
+	0x01, 0x0a, 0x08, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x73, 0x12, 0x3d, 0x0a, 0x07, 0x69,
+	0x6e, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x63,
+	0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x48, 0x73, 0x76, 0x4f,
+	0x72, 0x64, 0x65, 0x72, 0x2e, 0x49, 0x6e, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x43, 0x6d, 0x64, 0x48,
+	0x00, 0x52, 0x07, 0x69, 0x6e, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x12, 0x16, 0x0a, 0x05, 0x66, 0x61,
+	0x74, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x05, 0x66, 0x61, 0x74,
+	0x61, 0x6c, 0x12, 0x3f, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x74, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e,
+	0x76, 0x31, 0x2e, 0x48, 0x73, 0x76, 0x43, 0x6d, 0x64, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x48, 0x00, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x76,
+	0x65, 0x72, 0x74, 0x42, 0x05, 0x0a, 0x03, 0x63, 0x6d, 0x64, 0x32, 0x5a, 0x0a, 0x10, 0x43, 0x6f,
+	0x6c, 0x6f, 0x72, 0x43, 0x6f, 0x6e, 0x76, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x46,
+	0x0a, 0x07, 0x46, 0x72, 0x6f, 0x6d, 0x48, 0x73, 0x76, 0x12, 0x1c, 0x2e, 0x63, 0x6f, 0x6c, 0x6f,
+	0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x46, 0x72, 0x6f, 0x6d, 0x48, 0x73, 0x76,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e,
+	0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x46, 0x72, 0x6f, 0x6d, 0x48, 0x73, 0x76, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0x6b, 0x0a, 0x0d, 0x48, 0x73, 0x76, 0x45, 0x76, 0x74,
+	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x5a, 0x0a, 0x09, 0x43, 0x6f, 0x6e, 0x76, 0x65,
+	0x72, 0x74, 0x65, 0x64, 0x12, 0x25, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76,
+	0x2e, 0x76, 0x31, 0x2e, 0x48, 0x73, 0x76, 0x45, 0x76, 0x74, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65,
+	0x72, 0x74, 0x65, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x26, 0x2e, 0x63, 0x6f,
+	0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x48, 0x73, 0x76, 0x45, 0x76,
+	0x74, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x74, 0x65, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x32, 0x65, 0x0a, 0x0d, 0x48, 0x73, 0x76, 0x43, 0x6d, 0x64, 0x53, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x12, 0x54, 0x0a, 0x07, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x74, 0x12,
+	0x23, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x48,
+	0x73, 0x76, 0x43, 0x6d, 0x64, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65, 0x72, 0x74, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76,
+	0x2e, 0x76, 0x31, 0x2e, 0x48, 0x73, 0x76, 0x43, 0x6d, 0x64, 0x2e, 0x43, 0x6f, 0x6e, 0x76, 0x65,
+	0x72, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0x6a, 0x0a, 0x11, 0x48, 0x73,
+	0x76, 0x43, 0x6d, 0x64, 0x52, 0x65, 0x63, 0x76, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12,
+	0x55, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x43, 0x6d, 0x64, 0x12, 0x24, 0x2e, 0x63, 0x6f, 0x6c, 0x6f,
+	0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x48, 0x73, 0x76, 0x4f, 0x72, 0x64, 0x65,
+	0x72, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6d, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x25, 0x2e, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x2e, 0x68, 0x73, 0x76, 0x2e, 0x76, 0x31, 0x2e, 0x48,
+	0x73, 0x76, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x2e, 0x47, 0x65, 0x74, 0x43, 0x6d, 0x64, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x08, 0x5a, 0x06, 0x68, 0x73, 0x76, 0x2f, 0x76, 0x31,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -283,23 +1082,56 @@ func file_proto_color_hsv_v1_conv_proto_rawDescGZIP() []byte {
 	return file_proto_color_hsv_v1_conv_proto_rawDescData
 }
 
-var file_proto_color_hsv_v1_conv_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_proto_color_hsv_v1_conv_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_proto_color_hsv_v1_conv_proto_goTypes = []interface{}{
-	(*Rgb)(nil),             // 0: color.hsv.v1.Rgb
-	(*Hsv)(nil),             // 1: color.hsv.v1.Hsv
-	(*FromHsvRequest)(nil),  // 2: color.hsv.v1.FromHsvRequest
-	(*FromHsvResponse)(nil), // 3: color.hsv.v1.FromHsvResponse
+	(*Rgb)(nil),                      // 0: color.hsv.v1.Rgb
+	(*Hsv)(nil),                      // 1: color.hsv.v1.Hsv
+	(*FromHsvRequest)(nil),           // 2: color.hsv.v1.FromHsvRequest
+	(*FromHsvResponse)(nil),          // 3: color.hsv.v1.FromHsvResponse
+	(*Timestamp)(nil),                // 4: color.hsv.v1.Timestamp
+	(*HsvEvt)(nil),                   // 5: color.hsv.v1.HsvEvt
+	(*Uuid)(nil),                     // 6: color.hsv.v1.Uuid
+	(*Meta)(nil),                     // 7: color.hsv.v1.Meta
+	(*HsvCmd)(nil),                   // 8: color.hsv.v1.HsvCmd
+	(*HsvOrder)(nil),                 // 9: color.hsv.v1.HsvOrder
+	(*HsvEvt_ConvertedRequest)(nil),  // 10: color.hsv.v1.HsvEvt.ConvertedRequest
+	(*HsvEvt_ConvertedResponse)(nil), // 11: color.hsv.v1.HsvEvt.ConvertedResponse
+	(*HsvCmd_ConvertRequest)(nil),    // 12: color.hsv.v1.HsvCmd.ConvertRequest
+	(*HsvCmd_ConvertResponse)(nil),   // 13: color.hsv.v1.HsvCmd.ConvertResponse
+	(*HsvOrder_GetCmdRequest)(nil),   // 14: color.hsv.v1.HsvOrder.GetCmdRequest
+	(*HsvOrder_GetCmdResponse)(nil),  // 15: color.hsv.v1.HsvOrder.GetCmdResponse
+	(*HsvOrder_InvalidCmd)(nil),      // 16: color.hsv.v1.HsvOrder.InvalidCmd
+	(*HsvOrder_Commands)(nil),        // 17: color.hsv.v1.HsvOrder.Commands
 }
 var file_proto_color_hsv_v1_conv_proto_depIdxs = []int32{
-	1, // 0: color.hsv.v1.FromHsvRequest.hsv:type_name -> color.hsv.v1.Hsv
-	0, // 1: color.hsv.v1.FromHsvResponse.rgb:type_name -> color.hsv.v1.Rgb
-	2, // 2: color.hsv.v1.ColorConvService.FromHsv:input_type -> color.hsv.v1.FromHsvRequest
-	3, // 3: color.hsv.v1.ColorConvService.FromHsv:output_type -> color.hsv.v1.FromHsvResponse
-	3, // [3:4] is the sub-list for method output_type
-	2, // [2:3] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	1,  // 0: color.hsv.v1.FromHsvRequest.hsv:type_name -> color.hsv.v1.Hsv
+	0,  // 1: color.hsv.v1.FromHsvResponse.rgb:type_name -> color.hsv.v1.Rgb
+	6,  // 2: color.hsv.v1.Meta.request_id:type_name -> color.hsv.v1.Uuid
+	6,  // 3: color.hsv.v1.Meta.reply_id:type_name -> color.hsv.v1.Uuid
+	7,  // 4: color.hsv.v1.HsvEvt.ConvertedRequest.meta:type_name -> color.hsv.v1.Meta
+	0,  // 5: color.hsv.v1.HsvEvt.ConvertedRequest.converted:type_name -> color.hsv.v1.Rgb
+	4,  // 6: color.hsv.v1.HsvEvt.ConvertedResponse.sent:type_name -> color.hsv.v1.Timestamp
+	7,  // 7: color.hsv.v1.HsvCmd.ConvertRequest.meta:type_name -> color.hsv.v1.Meta
+	1,  // 8: color.hsv.v1.HsvCmd.ConvertRequest.hsv:type_name -> color.hsv.v1.Hsv
+	0,  // 9: color.hsv.v1.HsvCmd.ConvertResponse.rgb:type_name -> color.hsv.v1.Rgb
+	6,  // 10: color.hsv.v1.HsvOrder.GetCmdRequest.request_id:type_name -> color.hsv.v1.Uuid
+	17, // 11: color.hsv.v1.HsvOrder.GetCmdResponse.commands:type_name -> color.hsv.v1.HsvOrder.Commands
+	7,  // 12: color.hsv.v1.HsvOrder.InvalidCmd.meta:type_name -> color.hsv.v1.Meta
+	16, // 13: color.hsv.v1.HsvOrder.Commands.invalid:type_name -> color.hsv.v1.HsvOrder.InvalidCmd
+	12, // 14: color.hsv.v1.HsvOrder.Commands.convert:type_name -> color.hsv.v1.HsvCmd.ConvertRequest
+	2,  // 15: color.hsv.v1.ColorConvService.FromHsv:input_type -> color.hsv.v1.FromHsvRequest
+	10, // 16: color.hsv.v1.HsvEvtService.Converted:input_type -> color.hsv.v1.HsvEvt.ConvertedRequest
+	12, // 17: color.hsv.v1.HsvCmdService.Convert:input_type -> color.hsv.v1.HsvCmd.ConvertRequest
+	14, // 18: color.hsv.v1.HsvCmdRecvService.GetCmd:input_type -> color.hsv.v1.HsvOrder.GetCmdRequest
+	3,  // 19: color.hsv.v1.ColorConvService.FromHsv:output_type -> color.hsv.v1.FromHsvResponse
+	11, // 20: color.hsv.v1.HsvEvtService.Converted:output_type -> color.hsv.v1.HsvEvt.ConvertedResponse
+	13, // 21: color.hsv.v1.HsvCmdService.Convert:output_type -> color.hsv.v1.HsvCmd.ConvertResponse
+	15, // 22: color.hsv.v1.HsvCmdRecvService.GetCmd:output_type -> color.hsv.v1.HsvOrder.GetCmdResponse
+	19, // [19:23] is the sub-list for method output_type
+	15, // [15:19] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_proto_color_hsv_v1_conv_proto_init() }
@@ -356,6 +1188,179 @@ func file_proto_color_hsv_v1_conv_proto_init() {
 				return nil
 			}
 		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Timestamp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvEvt); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Uuid); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Meta); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvCmd); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvOrder); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvEvt_ConvertedRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvEvt_ConvertedResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvCmd_ConvertRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvCmd_ConvertResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvOrder_GetCmdRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvOrder_GetCmdResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvOrder_InvalidCmd); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_color_hsv_v1_conv_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*HsvOrder_Commands); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+	}
+	file_proto_color_hsv_v1_conv_proto_msgTypes[17].OneofWrappers = []interface{}{
+		(*HsvOrder_Commands_Invalid)(nil),
+		(*HsvOrder_Commands_Fatal)(nil),
+		(*HsvOrder_Commands_Convert)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -363,9 +1368,9 @@ func file_proto_color_hsv_v1_conv_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_color_hsv_v1_conv_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   18,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   4,
 		},
 		GoTypes:           file_proto_color_hsv_v1_conv_proto_goTypes,
 		DependencyIndexes: file_proto_color_hsv_v1_conv_proto_depIdxs,

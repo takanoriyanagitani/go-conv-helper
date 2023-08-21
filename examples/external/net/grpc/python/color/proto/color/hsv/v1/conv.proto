@@ -27,3 +27,74 @@ message FromHsvResponse {
 service ColorConvService {
   rpc FromHsv(FromHsvRequest) returns (FromHsvResponse);
 }
+
+message Timestamp {
+  sfixed64 unixtime_micros = 1;
+}
+
+message HsvEvt {
+  message ConvertedRequest {
+    Meta meta = 1;
+    Rgb converted = 2;
+  }
+
+  message ConvertedResponse {
+    Timestamp sent = 1;
+  }
+}
+
+service HsvEvtService {
+  rpc Converted(HsvEvt.ConvertedRequest) returns (HsvEvt.ConvertedResponse);
+}
+
+message Uuid {
+  fixed64 hi = 1;
+  fixed64 lo = 2;
+}
+
+message Meta {
+  Uuid request_id = 1;
+  Uuid reply_id = 2;
+}
+
+message HsvCmd {
+  message ConvertRequest {
+    Meta meta = 1;
+    Hsv hsv = 2;
+  }
+
+  message ConvertResponse {
+    Rgb rgb = 1;
+  }
+}
+
+service HsvCmdService {
+  rpc Convert(HsvCmd.ConvertRequest) returns (HsvCmd.ConvertResponse);
+}
+
+message HsvOrder {
+  message GetCmdRequest {
+    Uuid request_id = 1;
+  }
+
+  message GetCmdResponse {
+    Commands commands = 1;
+  }
+
+  message InvalidCmd {
+    Meta meta = 1;
+    string error = 2;
+  }
+
+  message Commands {
+    oneof cmd {
+      InvalidCmd invalid = 1;
+      string fatal = 2;
+      HsvCmd.ConvertRequest convert = 3;
+    }
+  }
+}
+
+service HsvCmdRecvService {
+  rpc GetCmd(HsvOrder.GetCmdRequest) returns (HsvOrder.GetCmdResponse);
+}

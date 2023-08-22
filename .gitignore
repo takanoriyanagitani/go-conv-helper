@@ -29,3 +29,4 @@ examples/external/wasm/wazero/memory/gz2json/rs-gz2json/target
 examples/external/net/grpc/compress/bytes2bzip2/rs-bytes2bzip2/target
 examples/external/net/grpc/compress/bytes2bzip2/rs-bytes2bzip2/node_modules
 examples/external/net/grpc/cpp/str2len/rs-helper/target
+examples/external/net/grpc/python/color/indirect/__pycache__

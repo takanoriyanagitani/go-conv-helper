@@ -115,3 +115,62 @@ func TestConv(t *testing.T) {
 		})
 	})
 }
+
+func BenchmarkConv(b *testing.B) {
+	b.Run("ConverterMultiNew", func(b *testing.B) {
+		b.Run("lower/upper", func(b *testing.B) {
+			var lower ch.Converter[string, string] = func(
+				_ context.Context,
+				input string,
+			) (string, error) {
+				return strings.ToLower(input), nil
+			}
+
+			var upper ch.Converter[string, string] = func(
+				_ context.Context,
+				input string,
+			) (string, error) {
+				return strings.ToUpper(input), nil
+			}
+
+			var s2l aconv.ConvertToChan[string, string] = aconv.ConvertToChanNew(lower)
+			var s2h aconv.ConvertToChan[string, string] = aconv.ConvertToChanNew(upper)
+
+			reducer := func(state []string, next aconv.Either[string]) ([]string, error) {
+				var err error = next.Left()
+				if nil != err {
+					return nil, err
+				}
+				var right string = next.Right()
+				return append(state, right), nil
+			}
+
+			var conv ch.Converter[string, []string] = aconv.ConverterMultiNew(
+				reducer,
+				s2l,
+				s2h,
+			)
+
+			b.Run("helo", func(b *testing.B) {
+				var ctx context.Context = context.Background()
+				const input string = "Helo, wrld"
+				var out []string
+				var e error
+				b.ResetTimer()
+
+				for i := 0; i < b.N; i++ {
+					out, e = conv(ctx, input)
+				}
+
+				if nil != e {
+					b.Fatalf("Unexpected error: %v\n", e)
+				}
+
+				if 2 != len(out) {
+					b.Fatalf("Unexpected output. length: %v\n", len(out))
+				}
+			})
+
+		})
+	})
+}

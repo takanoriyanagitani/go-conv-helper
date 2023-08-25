@@ -106,11 +106,12 @@ func TestManager(t *testing.T) {
 				_, e4 := neo(ctx, "hh")
 				t.Run("must err 4", assertErr(e4))
 				var em managed.ManagedError
-				if errors.As(e4, &em){
-					switch em.Level(){
-						case managed.ErrorLevelLo: continue
-						default:
-							t.Fatalf("Unexpected error level: %v\n", em.Level().String())
+				if errors.As(e4, &em) {
+					switch em.Level() {
+					case managed.ErrorLevelLo:
+						continue
+					default:
+						t.Fatalf("Unexpected error level: %v\n", em.Level().String())
 					}
 					continue
 				}
@@ -134,11 +135,12 @@ func TestManager(t *testing.T) {
 				_, e4 := neo(ctx, "hh")
 				t.Run("must err 4", assertErr(e4))
 				var em managed.ManagedError
-				if errors.As(e4, &em){
-					switch em.Level(){
-						case managed.ErrorLevelHi: continue
-						default:
-							t.Fatalf("Unexpected error level: %v\n", em.Level().String())
+				if errors.As(e4, &em) {
+					switch em.Level() {
+					case managed.ErrorLevelHi:
+						continue
+					default:
+						t.Fatalf("Unexpected error level: %v\n", em.Level().String())
 					}
 					continue
 				}

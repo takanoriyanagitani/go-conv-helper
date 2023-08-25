@@ -25,5 +25,4 @@ func (c Input2Packed[I, P]) PackAll(inputs InputSource[I], output P) (P, error) 
 			return output, e
 		}
 	}
-	return output, nil
 }

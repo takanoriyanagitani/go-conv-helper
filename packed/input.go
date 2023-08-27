@@ -1,6 +1,7 @@
 package packed
 
 import (
+	"context"
 	"io"
 )
 
@@ -26,3 +27,5 @@ func (c Input2Packed[I, P]) PackAll(inputs InputSource[I], output P) (P, error) 
 		}
 	}
 }
+
+type PackedInputSaver[P any] func(ctx context.Context, packed P) error

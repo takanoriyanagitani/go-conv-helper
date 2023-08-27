@@ -6,7 +6,7 @@ import (
 	ch "github.com/takanoriyanagitani/go-conv-helper"
 )
 
-type PackedSource[P any] func() (packed P, e error)
+type PackedSource[P any] func(context.Context) (packed P, e error)
 
 type UnpackPackedInput[P, I any] func(packed P) (unpacked []I, e error)
 
@@ -37,5 +37,24 @@ func (b ConvertPackedBuilder[P, I, O, Q]) Build() ConvertPacked[P, I, O, Q] {
 			}
 		}
 		return
+	}
+}
+
+type PackedOutputSaver[Q any] func(ctx context.Context, packed Q) error
+
+func (c ConvertPacked[P, I, O, Q]) SaveConvertedNew(
+	source PackedSource[P],
+	saver PackedOutputSaver[Q],
+) func(context.Context) error {
+	return func(ctx context.Context) error {
+		ipack, e := source(ctx)
+		if nil != e {
+			return e
+		}
+		opack, e := c(ctx, ipack)
+		if nil != e {
+			return e
+		}
+		return saver(ctx, opack)
 	}
 }

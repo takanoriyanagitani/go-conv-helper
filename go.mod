@@ -7,7 +7,7 @@ require (
 	github.com/redis/go-redis/v9 v9.0.5
 	github.com/tetratelabs/wazero v1.3.1
 	google.golang.org/grpc v1.57.1
-	google.golang.org/protobuf v1.31.0
+	google.golang.org/protobuf v1.33.0
 )
 
 require (
